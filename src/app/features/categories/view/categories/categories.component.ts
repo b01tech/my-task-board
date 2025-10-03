@@ -2,15 +2,14 @@ import { Component, inject } from '@angular/core';
 import { ColorsListComponent } from '../../components/colors-list/colors-list.component';
 import { MainListComponent } from '../../components/main-list/main-list.component';
 import { CategoryService } from '../../services/category.service';
-import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-categories',
   standalone: true,
-  imports: [ColorsListComponent, MainListComponent, AsyncPipe],
+  imports: [ColorsListComponent, MainListComponent],
   templateUrl: './categories.component.html',
 })
 export class CategoriesComponent {
   private categoryService = inject(CategoryService);
-  public categories$ = this.categoryService.getCategories();
+  public categories = this.categoryService.categories;
 }

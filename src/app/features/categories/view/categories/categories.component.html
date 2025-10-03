@@ -1,6 +1,4 @@
 <div class="flex flex-col justify-between items-center w-full h-full">
-  @if (categories$ | async; as categories) {
-    <app-main-list [categories]="categories"></app-main-list>
-    <app-colors-list [categories]="categories"></app-colors-list>
-  }
+  <app-main-list [categories]="categories()"></app-main-list>
+  <app-colors-list [categories]="categories()"></app-colors-list>
 </div>
